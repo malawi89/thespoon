@@ -1,0 +1,13 @@
+<h1>New Restaurant</h1>
+
+<% if @restaurant.errors.any? %>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'form', restaurant: @restaurant %>
+
+<%= link_to 'Back', restaurants_path %>

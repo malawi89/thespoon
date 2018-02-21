@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to "See chef", chef_restaurant_path(@restaurant) %>
+
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.restaurant.name %> was <%= review.content %></li>
+  <% end %>
+</ul>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @restaurant.stars %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
